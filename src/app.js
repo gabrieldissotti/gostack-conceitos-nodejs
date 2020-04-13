@@ -48,7 +48,8 @@ app.put("/repositories/:id", findRepository(repositories), (request, response) =
 });
 
 app.delete("/repositories/:id", findRepository(repositories), (request, response) => {
-  repositories.pop(request.repositoryIndex, 1)
+  repositories.splice(request.repositoryIndex, 1)
+
 
   return response.status(204).send()
 });
